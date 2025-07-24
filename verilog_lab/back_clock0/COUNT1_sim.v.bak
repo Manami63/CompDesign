@@ -1,0 +1,85 @@
+//=======================================================================
+//  CLOCK1.v  --  1?hour clock top?level (???)
+//-----------------------------------------------------------------------
+//  * 50?MHz CLK ??? CNT1SEC ? 1?Hz ???
+//  * ????? CNT60 ???????? (? CA ? ? EN)
+//  * KEY[0]/KEY[1] ? BTN_IN ?????????????+1/?+1
+//  * SW[9] ??????, SW[0] ?????
+//  * 7???? SEG7DEC (7bit) ????? + DP=OFF ? 8bit nHEXx
+//=======================================================================
+`timescale 1ns/1ps
+
+module CLOCK1_sim(
+    input         CLK,          // 50?MHz system clock
+    input	  EN,
+    input  [9:0]  SW,           // SW[9]=RST, SW[0]=CLR
+    input  [1:0]  KEY,          // KEY[0]=SEC_UP (active?low), KEY[1]=MIN_UP (active?low)
+    output [7:0]  nHEX0,        // sec ones
+    output [7:0]  nHEX1,        // sec tens
+    output [7:0]  nHEX2,        // min ones
+    output [7:0]  nHEX3         // min tens
+);
+
+  //-------------------------------------------------------------
+  //  Reset & control signals
+  //-------------------------------------------------------------
+  wire rst  = SW[9];    // active?high sync reset
+  wire clr  = SW[0];    // active?high sync clear (all counters ? 00)
+
+  //-------------------------------------------------------------
+  //  1?Hz enable from CNT1SEC
+  //-------------------------------------------------------------
+
+
+  //-------------------------------------------------------------
+  //  ????? (00?59)
+  //-------------------------------------------------------------
+  wire [2:0] sec_tens;
+  wire [3:0] sec_ones;
+  wire       ca_sec;
+
+  CNT60 u_sec (
+      .CLK (CLK),
+      .RST (rst),
+      .CLR (clr),
+      .EN  (EN),
+      .INC (sec_up),
+      .QH  (sec_tens),
+      .QL  (sec_ones),
+      .CA  (ca_sec)        // ??? ? ????? EN
+  );
+
+  //-------------------------------------------------------------
+  //  ????? (00?59)
+  //-------------------------------------------------------------
+  wire [2:0] min_tens;
+  wire [3:0] min_ones;
+  CNT60 u_min (
+      .CLK (CLK),
+      .RST (rst),
+      .CLR (clr),
+      .EN  (ca_sec),
+      .INC (min_up),
+      .QH  (min_tens),
+      .QL  (min_ones),
+      .CA  ()            // ??? (1??????)
+  );
+
+  //-------------------------------------------------------------
+  //  7?segment decode (active?low, DP ????)
+  //-------------------------------------------------------------
+  wire [6:0] seg_sec_ones, seg_sec_tens, seg_min_ones, seg_min_tens;
+
+  SEG7DEC u_hex0 (.din(sec_ones), .seg(seg_sec_ones));
+  SEG7DEC u_hex1 (.din(sec_tens), .seg(seg_sec_tens));
+  SEG7DEC u_hex2 (.din(min_ones), .seg(seg_min_ones));
+  SEG7DEC u_hex3 (.din(min_tens), .seg(seg_min_tens));
+
+  // ??? {DP, G?A} ?8bit, DP?1=??
+  assign nHEX0 = {1'b1, ~seg_sec_ones};
+  assign nHEX1 = {1'b1, ~seg_sec_tens};
+  assign nHEX2 = {1'b1, ~seg_min_ones};
+  assign nHEX3 = {1'b1, ~seg_min_tens};
+
+endmodule
+

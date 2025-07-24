@@ -1,0 +1,36 @@
+module CLOCK1 (
+    input CLK,
+    input [9:0] SW,
+    input [1:0] KEY,
+    output [7:0] nHEX0,
+    output [7:0] nHEX1,
+    output [7:0] nHEX2,
+    output [7:0] nHEX3
+);
+
+    // ?????
+    wire en1hz;
+    wire [3:0] sec1, min1;
+    wire [2:0] sec10, min10;
+    wire ca;
+    wire secup, minup, clr;
+
+    // 1Hz ????
+    CNT1SEC CNT1SEC (.CLK(CLK), .RST(SW[9]), .EN1HZ(en1hz));
+
+    // ?????
+    BTN_IN b0 (.CLK(CLK), .RST(SW[9]), .KEY(KEY), .SW(SW[0]), .SECUP(secup), .MINUP(minup), .CLR(clr));
+
+    // ?????
+    CNT60 SECCNT (.CLK(CLK), .RST(SW[9]), .INC(en1hz | secup), .CLR(clr), .QL(sec1), .QH(sec10), .CA(ca));
+
+    // ?????
+    CNT60 MINCNT (.CLK(CLK), .RST(SW[9]), .INC(ca | minup), .CLR(clr), .QL(min1), .QH(min10));
+
+    // 7???????
+    SEG7DEC d0 (.DIN(sec1),  .nHEX(nHEX0));
+    SEG7DEC d1 (.DIN(sec10), .nHEX(nHEX1));
+    SEG7DEC d2 (.DIN(min1),  .nHEX(nHEX2));
+    SEG7DEC d3 (.DIN(min10), .nHEX(nHEX3));
+
+endmodule

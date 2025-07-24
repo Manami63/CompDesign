@@ -1,0 +1,15 @@
+C:/Users/Owner/Data/Downloads/lab_1-4-20250616/ff_sim.v {1 {vlog -work work -stats=none C:/Users/Owner/Data/Downloads/lab_1-4-20250616/ff_sim.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ff_sim
+
+Top level modules:
+	ff_sim
+
+} {} {}} C:/lab/verilog_lab/lab5/ff.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab5/ff.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ff
+
+Top level modules:
+	ff
+
+} {} {}}

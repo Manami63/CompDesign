@@ -1,0 +1,15 @@
+C:/Users/Owner/Data/Downloads/lab_1-4-20250616/seven_sim.v {1 {vlog -work work -stats=none C:/Users/Owner/Data/Downloads/lab_1-4-20250616/seven_sim.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module seven_sim
+
+Top level modules:
+	seven_sim
+
+} {} {}} C:/lab/verilog_lab/lab4/seven.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab4/seven.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module seven
+
+Top level modules:
+	seven
+
+} {} {}}

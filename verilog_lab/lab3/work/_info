@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/lab/verilog_lab/lab2
+vmux4
+!s110 1750236120
+!i10b 1
+!s100 b3NUjPY5=U>BG]12BiVVh3
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IGaUj:8<3RSNGBZ[`9d8[00
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/lab/verilog_lab/lab3
+w1750236007
+8C:/lab/verilog_lab/lab3/mux4.v
+FC:/lab/verilog_lab/lab3/mux4.v
+!i122 5
+L0 1 12
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z4 !s108 1750236120.000000
+!s107 C:/lab/verilog_lab/lab3/mux4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/lab/verilog_lab/lab3/mux4.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vmux4_sim
+!s110 1750236121
+!i10b 1
+!s100 ?ZCN9C<YPk18KXLJcVL^K2
+R0
+IkDYAfV6dXIkYgYWLTcCIz1
+R1
+R2
+w1750075455
+8C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v
+FC:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v
+!i122 6
+L0 2 38
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v|
+!i113 1
+R5
+R6

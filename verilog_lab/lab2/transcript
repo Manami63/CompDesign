@@ -1,0 +1,174 @@
+# Compile of mux4.v failed with 2 errors.
+# Compile of mux4_sim.v was successful.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of mux4.v was successful.
+# Compile of mux4_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.mux4_sim
+# vsim -gui work.mux4_sim 
+# Start time: 10:20:21 on Jun 17,2025
+# Loading work.mux4_sim
+# Loading work.mux4
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'sel'. The port definition is at: C:/lab/verilog_lab/lab3/mux4.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /mux4_sim/u1 File: C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v Line: 12
+add wave sim:/mux4_sim/u1/*
+add wave -position insertpoint sim:/mux4_sim/u1/*
+run 1us
+# Compile of mux4.v was successful.
+# Compile of mux4_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+run 1us
+vsim -gui work.mux4_sim
+# End time: 17:41:09 on Jun 18,2025, Elapsed time: 31:20:48
+# Errors: 0, Warnings: 9
+# vsim -gui work.mux4_sim 
+# Start time: 17:41:09 on Jun 18,2025
+# Loading work.mux4_sim
+# Loading work.mux4
+# Compile of mux4.v was successful.
+# Compile of mux4_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.mux4_sim
+# End time: 17:43:11 on Jun 18,2025, Elapsed time: 0:02:02
+# Errors: 0, Warnings: 2
+# vsim -gui work.mux4_sim 
+# Start time: 17:43:11 on Jun 18,2025
+# Loading work.mux4_sim
+# Loading work.mux4
+add wave sim:/mux4_sim/u1/*
+run 1us
+quit -sim
+# End time: 17:47:01 on Jun 18,2025, Elapsed time: 0:03:50
+# Errors: 0, Warnings: 1
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+file mkdir C:/lab/verilog_lab/lab4
+# Loading project seven
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 6 errors.
+# 2 compiles, 1 failed with 6 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 8 errors.
+# 2 compiles, 1 failed with 8 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 8 errors.
+# 2 compiles, 1 failed with 8 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 8 errors.
+# 2 compiles, 1 failed with 8 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 6 errors.
+# 2 compiles, 1 failed with 6 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 6 errors.
+# 2 compiles, 1 failed with 6 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v failed with 6 errors.
+# 2 compiles, 1 failed with 6 errors.
+# Compile of seven_sim.v was successful.
+# Compile of seven.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.seven_sim
+# vsim -gui work.seven_sim 
+# Start time: 18:34:17 on Jun 18,2025
+# Loading work.seven_sim
+# ** Error: (vsim-3033) Instantiation of 'seven' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /seven_sim File: C:/Users/Owner/Data/Downloads/lab_1-4-20250616/seven_sim.v Line: 10
+#         Searched libraries:
+#             C:/lab/verilog_lab/lab4/work
+# Error loading design
+# End time: 18:34:18 on Jun 18,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 13
+vsim -gui work.seven_sim
+# vsim -gui work.seven_sim 
+# Start time: 18:35:02 on Jun 18,2025
+# Loading work.seven_sim
+# ** Error: (vsim-3033) Instantiation of 'seven' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /seven_sim File: C:/Users/Owner/Data/Downloads/lab_1-4-20250616/seven_sim.v Line: 10
+#         Searched libraries:
+#             C:/lab/verilog_lab/lab4/work
+# Error loading design
+# End time: 18:35:03 on Jun 18,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
+# Load canceled
+# Compile of seven_sim.v was successful.
+# Compile of seven.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of seven_sim.v was successful.
+# Compile of seven.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.seven_sim
+# vsim -gui work.seven_sim 
+# Start time: 18:39:31 on Jun 18,2025
+# Loading work.seven_sim
+# Loading work.seven
+add wave sim:/seven_sim/u1/*
+run 1us
+quit -sim
+# End time: 18:46:37 on Jun 18,2025, Elapsed time: 0:07:06
+# Errors: 0, Warnings: 3
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+file mkdir C:/lab/verilog_lab/lab5
+# Loading project ff
+# Compile of ff.v failed with 2 errors.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ff.v was successful.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ff_sim
+# vsim -gui work.ff_sim 
+# Start time: 18:57:14 on Jun 18,2025
+# Loading work.ff_sim
+# Loading work.ff
+add wave sim:/ff_sim/u1/*
+run 1us
+# Compile of ff.v was successful.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ff.v was successful.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ff.v was successful.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+run 1us
+vsim -gui work.ff_sim
+# End time: 19:06:00 on Jun 18,2025, Elapsed time: 0:08:46
+# Errors: 0, Warnings: 10
+# vsim -gui work.ff_sim 
+# Start time: 19:06:00 on Jun 18,2025
+# Loading work.ff_sim
+# Loading work.ff
+add wave sim:/ff_sim/u1/*
+run 1us
+# Compile of ff.v was successful.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ff_sim
+# End time: 19:15:18 on Jun 18,2025, Elapsed time: 0:09:18
+# Errors: 0, Warnings: 2
+# vsim -gui work.ff_sim 
+# Start time: 19:15:19 on Jun 18,2025
+# Loading work.ff_sim
+# Loading work.ff
+add wave sim:/ff_sim/u1/*
+run 1us
+# Compile of ff.v was successful.
+# Compile of ff_sim.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.ff_sim
+# Loading work.ff
+run 1us
+# GetModuleFileName: 指定されたモジュールが見つかりません。
+# 
+# 
+quit -sim
+# End time: 09:46:53 on Jun 20,2025, Elapsed time: 38:31:34
+# Errors: 0, Warnings: 1
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+file mkdir C:/lab/verilog_lab/lab6
+# Loading project CNT60

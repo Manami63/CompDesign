@@ -1,0 +1,43 @@
+C:/lab/verilog_lab/lab6/CLOCK1.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab6/CLOCK1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CLOCK1
+
+Top level modules:
+	CLOCK1
+
+} {} {}} C:/Users/Owner/Data/Downloads/CLOCK1-20250620/CNT1SEC.v {1 {vlog -work work -stats=none C:/Users/Owner/Data/Downloads/CLOCK1-20250620/CNT1SEC.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CNT1SEC
+
+Top level modules:
+	CNT1SEC
+
+} {} {}} C:/lab/verilog_lab/lab6/SEG7DEC_sim.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab6/SEG7DEC_sim.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_SEG7DEC
+
+Top level modules:
+	tb_SEG7DEC
+
+} {} {}} C:/lab/verilog_lab/clock1/COUNT1_sim.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/clock1/COUNT1_sim.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CLOCK1_sim
+
+Top level modules:
+	CLOCK1_sim
+
+} {} {}} C:/lab/verilog_lab/lab6/CNT60.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab6/CNT60.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CNT60
+
+Top level modules:
+	CNT60
+
+} {} {}} C:/Users/Owner/Data/Downloads/CLOCK1-20250620/BTN_IN.v {1 {vlog -work work -stats=none C:/Users/Owner/Data/Downloads/CLOCK1-20250620/BTN_IN.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module BTN_IN
+
+Top level modules:
+	BTN_IN
+
+} {} {}}

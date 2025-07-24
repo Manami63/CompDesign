@@ -1,0 +1,223 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/lab/verilog_lab/lab5
+vBTN_IN
+Z0 !s110 1751283971
+!i10b 1
+!s100 TKCX;ZUCVnNe]ZVYMK]hA1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I6Pccc86Vb`:n_8?9H8eWJ2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/lab/verilog_lab/lab6
+Z4 w1751282346
+8C:/Users/Owner/Data/Downloads/CLOCK1-20250630/BTN_IN.v
+FC:/Users/Owner/Data/Downloads/CLOCK1-20250630/BTN_IN.v
+!i122 30
+L0 4 47
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1751283971.000000
+!s107 C:/Users/Owner/Data/Downloads/CLOCK1-20250630/BTN_IN.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Owner/Data/Downloads/CLOCK1-20250630/BTN_IN.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@b@t@n_@i@n
+vCLOCK1
+R0
+!i10b 1
+!s100 O=4Mim;<g_QM3<ocgAf]_2
+R1
+ICM?OQc:PB2ca_3e;JVNQh3
+R2
+R3
+w1751283948
+8C:/lab/verilog_lab/lab6/CLOCK1.v
+FC:/lab/verilog_lab/lab6/CLOCK1.v
+!i122 32
+L0 1 36
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/lab/verilog_lab/lab6/CLOCK1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/lab/verilog_lab/lab6/CLOCK1.v|
+!i113 1
+R7
+R8
+n@c@l@o@c@k1
+vCNT1SEC
+R0
+!i10b 1
+!s100 7<OcU0?1mX:GBdfgV9F[72
+R1
+IR2_FJVQ;KYmQLNP`I?MJU0
+R2
+R3
+R4
+8C:/Users/Owner/Data/Downloads/CLOCK1-20250630/CNT1SEC.v
+FC:/Users/Owner/Data/Downloads/CLOCK1-20250630/CNT1SEC.v
+!i122 31
+L0 6 21
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Owner/Data/Downloads/CLOCK1-20250630/CNT1SEC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Owner/Data/Downloads/CLOCK1-20250630/CNT1SEC.v|
+!i113 1
+R7
+R8
+n@c@n@t1@s@e@c
+vCNT60
+!s110 1751869898
+!i10b 1
+!s100 WNeb<6j^?jBd07g5Z5YKN2
+R1
+I038A0TGUEKXM[=hYTQU^N3
+R2
+R3
+w1751866578
+8C:\lab\verilog_lab\lab6\CNT60.v
+FC:\lab\verilog_lab\lab6\CNT60.v
+!i122 39
+L0 1 64
+R5
+r1
+!s85 0
+31
+Z9 !s108 1751869898.000000
+!s107 C:\lab\verilog_lab\lab6\CNT60.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\lab\verilog_lab\lab6\CNT60.v|
+!i113 1
+R7
+R8
+n@c@n@t60
+vcnt60_sim
+!s110 1751869899
+!i10b 1
+!s100 DjPECRBRNXD2lz@?fC<?k3
+R1
+I6[8;9@`I`<BDUeo4TNI@33
+R2
+R3
+w1750680912
+8C:/Users/Owner/Data/Downloads/cnt60_sim.v
+FC:/Users/Owner/Data/Downloads/cnt60_sim.v
+!i122 40
+L0 3 48
+R5
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Owner/Data/Downloads/cnt60_sim.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Owner/Data/Downloads/cnt60_sim.v|
+!i113 1
+R7
+R8
+vff
+!s110 1750381277
+!i10b 1
+!s100 4hH0GC9Q<aF>10BQSo8YA3
+R1
+In>DL7UZJZz08m6B2ak28Q2
+R2
+R3
+w1750242569
+8C:/lab/verilog_lab/lab5/ff.v
+FC:/lab/verilog_lab/lab5/ff.v
+!i122 0
+L0 1 14
+R5
+r1
+!s85 0
+31
+Z10 !s108 1750381277.000000
+!s107 C:/lab/verilog_lab/lab5/ff.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/lab/verilog_lab/lab5/ff.v|
+!i113 1
+R7
+R8
+vff_sim
+!s110 1750381278
+!i10b 1
+!s100 A437<S]JJl<6?DNbb]m:X3
+R1
+IMZCozd;Hc6g9FIeiP6`dg2
+R2
+R3
+w1750075455
+8C:/Users/Owner/Data/Downloads/lab_1-4-20250616/ff_sim.v
+FC:/Users/Owner/Data/Downloads/lab_1-4-20250616/ff_sim.v
+!i122 1
+L0 2 85
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Owner/Data/Downloads/lab_1-4-20250616/ff_sim.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Owner/Data/Downloads/lab_1-4-20250616/ff_sim.v|
+!i113 1
+R7
+R8
+vseven
+!s110 1751283970
+!i10b 1
+!s100 b3VMiGPUYh=Sb::SYZnBD3
+R1
+IdT]SkT23?^KDHMZ8FJ^]_2
+R2
+R3
+w1751276650
+8C:/lab/verilog_lab/lab6/SEG7DEC.v
+FC:/lab/verilog_lab/lab6/SEG7DEC.v
+!i122 28
+L0 1 27
+R5
+r1
+!s85 0
+31
+!s108 1751283970.000000
+!s107 C:/lab/verilog_lab/lab6/SEG7DEC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/lab/verilog_lab/lab6/SEG7DEC.v|
+!i113 1
+R7
+R8
+vtb_SEG7DEC
+R0
+!i10b 1
+!s100 B`hhzl<LPR[fO3]C9QYFH0
+R1
+I;`8e6nAjDbfgfmgY2Pi:i3
+R2
+R3
+w1751276509
+8C:/lab/verilog_lab/lab6/SEG7DEC_sim.v
+FC:/lab/verilog_lab/lab6/SEG7DEC_sim.v
+!i122 29
+L0 1 16
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/lab/verilog_lab/lab6/SEG7DEC_sim.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/lab/verilog_lab/lab6/SEG7DEC_sim.v|
+!i113 1
+R7
+R8
+ntb_@s@e@g7@d@e@c

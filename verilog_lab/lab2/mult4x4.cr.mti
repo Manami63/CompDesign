@@ -1,0 +1,15 @@
+C:/lab/verilog_lab/lab2/mult4x4.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab2/mult4x4.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mult4x4
+
+Top level modules:
+	mult4x4
+
+} {} {}} C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mult4x4_sim.v {1 {vlog -work work -stats=none C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mult4x4_sim.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mult4x4_sim
+
+Top level modules:
+	mult4x4_sim
+
+} {} {}}

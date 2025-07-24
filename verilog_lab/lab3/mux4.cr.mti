@@ -1,0 +1,15 @@
+C:/lab/verilog_lab/lab3/mux4.v {1 {vlog -work work -stats=none C:/lab/verilog_lab/lab3/mux4.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux4
+
+Top level modules:
+	mux4
+
+} {} {}} C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v {1 {vlog -work work -stats=none C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mux4_sim.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux4_sim
+
+Top level modules:
+	mux4_sim
+
+} {} {}}

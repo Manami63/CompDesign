@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/lab/verilog_lab/lab1
+vmult4x4
+Z0 !s110 1750119767
+!i10b 1
+!s100 @DTz67EcU3YA8H@kEE<^m2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I<kaSlEIG_ZWE`BSkScJf?2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/lab/verilog_lab/lab2
+w1750119620
+8C:/lab/verilog_lab/lab2/mult4x4.v
+FC:/lab/verilog_lab/lab2/mult4x4.v
+!i122 0
+L0 1 9
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1750119767.000000
+!s107 C:/lab/verilog_lab/lab2/mult4x4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/lab/verilog_lab/lab2/mult4x4.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vmult4x4_sim
+R0
+!i10b 1
+!s100 ZH>NiWo`0F@7R:gZe8G1l0
+R1
+I7^7YHRVgfF2@=jT]BdaT80
+R2
+R3
+w1750075455
+8C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mult4x4_sim.v
+FC:/Users/Owner/Data/Downloads/lab_1-4-20250616/mult4x4_sim.v
+!i122 1
+L0 2 34
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mult4x4_sim.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Owner/Data/Downloads/lab_1-4-20250616/mult4x4_sim.v|
+!i113 1
+R6
+R7
