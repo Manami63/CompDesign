@@ -1,32 +1,34 @@
-`timescale 1ns / 1ps
 `include "common_param.vh"
 
 module MA(
     input  wire        CLK,
     input  wire        RST,
+    input  wire [31:0] Result,    // ALU等の結果(アドレス/値)
+    input  wire [31:0] Rdata2,    // SW時のストア値
+    input  wire [31:0] nextPC,
     input  wire [31:0] Ins,
-    input  wire [31:0] Addr,    // アドレス/ALU値
-    input  wire [31:0] Rdata2,  // ストア時の書き込み値
-    input  wire [31:0] RamData, // RAMの出力値
-    output reg  [31:0] MemWdata, // メモリ書き込みデータ
-    output reg         MemWE,    // メモリ書き込みイネーブル
-    output reg  [31:0] Result    // メモリアクセスまたはALU出力
+    output reg  [31:0] Wdata      // 書き戻しデータ
 );
+    // 内部メモリインスタンス
+    wire [31:0] dm_dout;
+    reg         dm_we;
+
+    DM dm0 (
+        .CLK(CLK),
+        .WE(dm_we),
+        .addr(Result),
+        .din(Rdata2),
+        .dout(dm_dout)
+    );
 
     always @(*) begin
-        MemWE = 1'b0;
-        MemWdata = 32'd0;
-        Result = Addr; // デフォルト
-
+        dm_we = 1'b0;
+        Wdata = Result;
         case (Ins[31:26])
-            LW: begin
-                Result = RamData;
-            end
-            SW: begin
-                MemWE = 1'b1;
-                MemWdata = Rdata2;
-            end
-            default: Result = Addr;
+            LW:  Wdata = dm_dout;   // lw命令時はメモリ値を返す
+            SW:  dm_we = 1'b1;      // sw命令時は書き込み
+            default: ;
         endcase
     end
+
 endmodule
