@@ -17,10 +17,18 @@ wire [15:0] Imm = Ins[15:0];       // immediate value  wireで型宣言しない
 assign Rdata1 = regs[Radr1];
 assign Rdata2 = regs[Radr2];
 
+// レジスタの初期化?
+integer i;
+initial begin
+    for (i = 0; i < 32; i = i + 1) begin
+        regs[i] = 32'd0;
+    end
+end
+
 
 // 即値(I型命令)拡張 SE/UE
 //wire sign_bit = Imm[15];
-assign Epd32 = (Op == 6'b001100 ||  // andi
+assign Ed32 = (Op == 6'b001100 ||  // andi
             Op == 6'b001101 ||      // ori
             Op == 6'b001110) ?      // xori     
             {16'b0, Imm} :          
