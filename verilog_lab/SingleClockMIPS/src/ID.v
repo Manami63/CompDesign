@@ -7,23 +7,12 @@ output [31:0] Rdata1, Rdata2, Ed32;
 reg [31:0] regs[0:31];
 
 // 命令を取り出す
-assign Op = Ins[31:26];       // opcode     
-assign Radr1 = Ins[25:21];    // rs reg addr
-assign Radr2 = Ins[20:16];    // rt reg addr
-assign Rd = Ins[15:11];       // rd reg addr
+wire [5:0]  Op = Ins[31:26];       // opcode     
+wire [4:0]  Radr1 = Ins[25:21];    // rs reg addr     wireで型宣言しないと，Rdata1と2が波形表示されない
+wire [4:0]  Radr2 = Ins[20:16];    // rt reg addr
+wire [4:0]  Rd = Ins[15:11];       // rd reg addr
 wire [15:0] Imm = Ins[15:0];       // immediate value  wireで型宣言しないと， 27lineでエラー        
 
-// レジスタから値を読む
-assign Rdata1 = regs[Radr1];
-assign Rdata2 = regs[Radr2];
-
-// レジスタの初期化?
-integer i;
-initial begin
-    for (i = 0; i < 32; i = i + 1) begin
-        regs[i] = 32'd0;
-    end
-end
 
 
 // 即値(I型命令)拡張 SE/UE
@@ -34,6 +23,7 @@ assign Ed32 = (Op == 6'b001100 ||  // andi
             {16'b0, Imm} :          
             {{16{Imm[15]}}, Imm};   // 最上位bitをうめる
 
+
 // 書き込み先レジスタを決定 MUX1
 assign Wadr = (Op == 6'b000011) ? 5'd31 :
             (Op == 6'b000000) ? Rd :
@@ -43,10 +33,24 @@ wire WE = (Op != 6'b000100) &&
             (Op != 6'b000101) &&
             (Op != 6'b000010);
 
+// レジスタファイルのインスタンス化
+RegisterFile rf (
+    .CLK(CLK),
+    .RST(RST),
+    .WE(WE),
+    .Radr1(Radr1),
+    .Radr2(Radr2),
+    .Wadr(Wadr),
+    .Wdata(Wdata),
+    .Rdata1(Rdata1),
+    .Rdata2(Rdata2)
+);
+
+
 // 書き込み
-always @(posedge CLK) begin
-      if(WE && Wadr != 5'd0) begin
-            regs[Wadr] <= Wdata;
-      end
-end
+// always @(posedge CLK) begin
+//       if(WE && Wadr != 5'd0) begin
+//             regs[Wadr] <= Wdata;
+//       end
+//end
 endmodule
