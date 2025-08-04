@@ -1,4 +1,4 @@
-module IM(parameter IMEM_SIZE = 128)(
+module IM #(parameter IMEM_SIZE = 128)(
   input CLK, RST,WE,
   input [31:0] PC, W_Ins,
   output [31:0] Ins

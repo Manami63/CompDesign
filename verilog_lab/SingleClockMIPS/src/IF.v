@@ -6,9 +6,13 @@ output reg [31:0] PC; // reg?
 output [31:0] nextPC, Ins;
 
 // PCにある番地の命令を取得
-IM imem(
-    .addr(PC[31:2]),    //word addressing
-    .instr(Ins)
+IM imem (
+    .CLK(CLK),
+    .RST(RST),
+    .WE(WE),
+    .PC(PC),
+    .W_Ins(W_Ins),
+    .Ins(Ins)
 );
 
 assign nextPC = PC + 4; //　つぎの命令アドレス

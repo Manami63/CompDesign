@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module IF_tb;
+module IF_sim;
 
   reg CLK;
   reg RST;
@@ -31,8 +31,8 @@ module IF_tb;
 
   initial begin
     $display("Start simulation using IMem.txt");
-    $dumpfile("IF_tb.vcd");
-    $dumpvars(0, IF_tb);
+    $dumpfile("IF_sim.vcd");
+    $dumpvars(0, IF_sim);
 
     // 初期状態
     RST = 1;
