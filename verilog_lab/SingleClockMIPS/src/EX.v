@@ -1,17 +1,19 @@
 module EX(
-    input  wire        CLK,
-    input  wire        RST,
-    input  wire [31:0] Ins,
-    input  wire [31:0] Rdata1,
-    input  wire [31:0] Rdata2,
-    input  wire [31:0] Ed32,
-    input  wire [31:0] nextPC,
-    output wire [31:0] Result,
-    output wire [31:0] newPC,
-    output wire [31:0] HI,
-    output wire [31:0] LO
+    CLK, RST, Ins, Rdata1, Rdata2, Ed32, nextPC, Result, newPC, HI, LO
 );
+    input  CLK, RST;
+    input  [31:0] Ins;
+    input  [31:0] Rdata1;
+    input  [31:0] Rdata2;
+    input  [31:0] Ed32;
+    input  [31:0] nextPC;
+    output [31:0] Result;
+    output [31:0] newPC;
+    output [31:0] HI;
+    output [31:0] LO;
+
     `include "common_param.vh"
+
     reg [31:0] hi_reg, lo_reg;
     reg [31:0] Result_reg, newPC_reg;
 
@@ -20,7 +22,7 @@ module EX(
     assign Result = Result_reg;
     assign newPC  = newPC_reg;
 
-    // --- 命令分解 ---
+    // ????
     wire [5:0] Op    = Ins[31:26];
     wire [4:0] shamt = Ins[10:6];
     wire [5:0] Func  = Ins[5:0];
@@ -32,32 +34,25 @@ module EX(
     wire signed [31:0] sRdata2 = Rdata2;
     wire signed [31:0] sEd32   = Ed32;
 
-    // === [ 図そのままの信号名 ] ===
-    // sh2: 即値左シフト2
-    wire [31:0] sh2 = {{14{Imm[15]}}, Imm, 2'b00};
-
-    // sh2_J: ジャンプアドレス左シフト2
+    // [?????????]
+    wire [31:0] sh2   = {{14{Imm[15]}}, Imm, 2'b00};
     wire [31:0] sh2_J = {nextPC[31:28], Jadr, 2'b00};
 
-    // MUX4: 分岐命令時のアドレス選択（分岐成立ならnextPC+4+sh2、そうでなければnextPC+4）
-    wire [31:0] MUX4 = (Op == BEQ && zero)    ? nextPC + 4 + sh2 :
-                       (Op == BNE && nonzero) ? nextPC + 4 + sh2 :
-                       (Op == BGTZ && sRdata1 > 0)  ? nextPC + 4 + sh2 :
-                       (Op == BLEZ && sRdata1 <= 0) ? nextPC + 4 + sh2 :
+    wire [31:0] MUX4 = (Op == BEQ && zero)           ? nextPC + 4 + sh2 :
+                       (Op == BNE && nonzero)        ? nextPC + 4 + sh2 :
+                       (Op == BGTZ && sRdata1 > 0)   ? nextPC + 4 + sh2 :
+                       (Op == BLEZ && sRdata1 <= 0)  ? nextPC + 4 + sh2 :
                        (Op == 6'd1 && Ins[20:16] == BLTZ_r && sRdata1 < 0) ? nextPC + 4 + sh2 :
-                       (Op == 6'd1 && Ins[20:16] == BGEZ_r && sRdata1 >= 0) ? nextPC + 4 + sh2 :
+                       (Op == 6'd1 && Ins[20:16] == BGEZ_r && sRdata1 >= 0)? nextPC + 4 + sh2 :
                        nextPC + 4;
 
-    // MUX5: ジャンプ・分岐・通常アドレス総合選択
-    wire [31:0] MUX5 =
-        (Op == J || Op == JAL)  ? sh2_J :
-        (Op == R_FORM && (Func == JR || Func == JALR)) ? Rdata1 :
-        MUX4;
+    wire [31:0] MUX5 = (Op == J || Op == JAL)              ? sh2_J :
+                       (Op == R_FORM && (Func == JR || Func == JALR)) ? Rdata1 :
+                       MUX4;
 
-    // === ALU演算 ===
+    // ALU??
     always @(*) begin
         Result_reg = 32'hDEADBEEF;
-        // MUX5をnewPCとして出力
         newPC_reg  = MUX5;
 
         case (Op)
@@ -94,7 +89,7 @@ module EX(
         endcase
     end
 
-    // === HI/LO演算 ===
+    // HI/LO??????
     always @(posedge CLK) begin
         if (RST) begin
             hi_reg <= 32'd0;
@@ -119,3 +114,4 @@ module EX(
     end
 
 endmodule
+
