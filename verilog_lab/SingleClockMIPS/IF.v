@@ -1,1 +1,0 @@
-IF IF0 (.CLK(CLK), .RST(RST), .newPC(newPC), .PC, .nextPC, .Ins);

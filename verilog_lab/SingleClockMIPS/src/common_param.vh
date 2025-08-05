@@ -58,7 +58,7 @@ parameter JR     = 6'd8;
 parameter JALR   = 6'd9;
 
 // Op:operation codes (Jump & Branch)
-parameter BLTZ   = 6'd1;
+parameter BLTZ   = 6'd1; //　どうやって同じOPcodeを比較するのか．
 parameter BGEZ   = 6'd1;
 //parameter BLTZAL = 6'd1;
 //parameter BGEZAL = 6'd1;
@@ -70,7 +70,7 @@ parameter BLEZ   = 6'd6;
 parameter BGTZ   = 6'd7;
 
 // rt[20:16] field codes (BLTZ or BGEZ)
-parameter BLTZ_r = 5'd0;
+parameter BLTZ_r = 5'd0; // ↑rtの値が0か1か
 parameter BGEZ_r = 5'd1;
 
 // End of common_param.vh

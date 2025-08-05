@@ -1,0 +1,12 @@
+**/back_*/
+# ModelSim generated files
+**/work/
+**/transcript
+**/vsim.wlf
+**/*.wlf
+**/*.mpf
+**/*.ini
+**/*.log
+**/*.mti
+**/*.dat
+**/*.vcd
