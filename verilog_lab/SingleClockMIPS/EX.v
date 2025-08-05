@@ -1,19 +1,17 @@
-`include "common_param.vh"
-
 module Ex(
     input  wire        CLK,
     input  wire        RST,
-    input  wire [31:0] Ins,     // 命令
-    input  wire [31:0] Rdata1,  // レジスタ値1
-    input  wire [31:0] Rdata2,  // レジスタ値2
-    input  wire [31:0] Ed32,    // 即値拡張
+    input  wire [31:0] Ins,     // ??
+    input  wire [31:0] Rdata1,  // ?????1
+    input  wire [31:0] Rdata2,  // ?????2
+    input  wire [31:0] Ed32,    // ????
     input  wire [31:0] nextPC,  // PC+4
-    output wire [31:0] Result,  // ALU/乗算/除算/ロード値
-    output wire [31:0] newPC,   // 分岐・ジャンプ時の新PC
+    output wire [31:0] Result,  // ALU/??/??/????
+    output wire [31:0] newPC,   // ??????????PC
     output wire [31:0] HI,
     output wire [31:0] LO
 );
-
+    `include "common_param.vh"
     reg [31:0] hi_reg, lo_reg;
     reg [31:0] Result_reg, newPC_reg;
 
@@ -32,7 +30,7 @@ module Ex(
     wire signed [31:0] sRdata2 = Rdata2;
     wire signed [31:0] sEd32   = Ed32;
 
-    // ALU, 分岐, ジャンプ, HI/LO, newPC判定
+    // ALU, ??, ????, HI/LO, newPC??
     always @(*) begin
         Result_reg = 32'hDEADBEEF;
         newPC_reg  = nextPC + 4;
@@ -59,7 +57,7 @@ module Ex(
                     JR:          newPC_reg  = Rdata1;
                     JALR: begin
                         newPC_reg  = Rdata1;
-                        // jalr時、rdにPC+4を書き込む制御はWBで
+                        // jalr??rd?PC+4????????WB?
                     end
                     default:     Result_reg = 32'hDEADBEEF;
                 endcase
@@ -92,7 +90,7 @@ module Ex(
         endcase
     end
 
-    // HI/LOレジスタ
+    // HI/LO????
     always @(posedge CLK) begin
         if (RST) begin
             hi_reg <= 32'd0;
