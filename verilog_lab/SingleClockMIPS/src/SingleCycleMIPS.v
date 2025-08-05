@@ -11,7 +11,7 @@ IF IF0 (.CLK(CLK), .RST(RST), .newPC(newPC), .PC, .W_Ins(W_Ins), .WE(WE), .nextP
 ID ID0 (.CLK(CLK), .RST(RST), .Ins(Ins), .Wdata(Wdata),
       .Rdata1(Rdata1), .Rdata2(Rdata2), .Ed32(Ed32));
 EX EX0 (.CLK(CLK), .RST(RST), .Ins(Ins), .Rdata1(Rdata1), .Rdata2(Rdata2),
-      .Ed32(Ed32), .nextPC(nextPC), .Result(Result), .newPC(newPC));
+        .Ed32(Ed32), .nextPC(nextPC), .Result(Result), .newPC(newPC),  HI(HI), LO(LO));
 MA MA0 (.CLK(CLK), .RST(RST), .Result(Result), .Rdata2(Rdata2), .nextPC(nextPC),
       .Ins(Ins), .Wdata(Wdata));
 
