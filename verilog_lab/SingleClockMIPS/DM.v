@@ -1,15 +1,16 @@
-// DM.v : シンプルな32bit×1024語RAM
 module DM(
-    input         CLK,
-    input         WE,
-    input  [31:0] addr,
-    input  [31:0] din,
-    output [31:0] dout
+    input  wire        CLK,
+    input  wire [4:0]  A,    // アドレス (32語)
+    input  wire [31:0] WD,   // 書き込みデータ
+    input  wire        WE,   // 書き込みイネーブル
+    output wire [31:0] RD    // 読み出しデータ
 );
-    reg [31:0] mem[0:1023];
-    assign dout = mem[addr[11:2]];  // 4バイト境界
+    reg [31:0] mem[0:31];
+    integer i;
+    initial for(i=0; i<32; i=i+1) mem[i]=0;
 
     always @(posedge CLK) begin
-        if (WE) mem[addr[11:2]] <= din;
+        if(WE) mem[A] <= WD;
     end
+    assign RD = mem[A];
 endmodule
