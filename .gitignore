@@ -10,3 +10,4 @@
 **/*.mti
 **/*.dat
 **/*.vcd
+**/.DS_Store
