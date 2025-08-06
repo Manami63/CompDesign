@@ -1,12 +1,11 @@
-module SEG7DEC(DIN,dot_enable,seg_out);
+module SEG7DEC(DIN,seg_out);
 	input [3:0] DIN;
-        input dot_enable;
-        output reg[7:0] seg_out;
-        reg [7:0] nHEX;
-
+    output reg[7:0] seg_out;
+    reg [7:0] nHEX;
+// DINの値に応じて7セグメント表示を設定         
 always @(*)
 begin
- case(DIN)
+    case(DIN)
 	4'h0: nHEX = 8'b11000000;
         4'h1: nHEX = 8'b11111001;
         4'h2: nHEX = 8'b10100100;
@@ -19,13 +18,7 @@ begin
         4'h9: nHEX = 8'b10010000;
         4'hA: nHEX = 8'b11111111;
         default: nHEX = 8'b11111111; // ????
- endcase
-
- if(dot_enable)
-        seg_out = nHEX & 8'b01111111;
- else
-        seg_out = nHEX | 8'b10000000;
-
+    endcase
 end
 endmodule
 
