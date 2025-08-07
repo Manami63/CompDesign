@@ -44,7 +44,7 @@ SELECTOR SELECTOR00 (
     .Result(Result),
     .Wdata(Wdata),
     .nextPC(nextPC),
-    .selected(Vdata),
+    .Vdata(Vdata),
     .LED(SEL_LED)
 );
 
