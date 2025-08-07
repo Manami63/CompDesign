@@ -127,15 +127,71 @@ module DE10_LITE_Golden_Top(
 //  REG/WIRE declarations
 //=======================================================
 
-CLOCK1 clock1(
-	.CLK(MAX10_CLK1_50), 
-	.RST(SW[9]), 
-	.KEY({KEY[0], KEY[1], SW[0]}), 
-	.nHEX0(HEX0), 
-	.nHEX1(HEX1), 
-	.nHEX2(HEX2), 
-	.nHEX3(HEX3)
+
+
+	// CLOCK
+	input MAX10_CLK1_50,
+
+	// KEYs and SWITCHes
+	input  [1:0] KEY,
+	input  [9:0] SW,
+
+	// HEX Display
+	output [7:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
+
+	// LEDs
+	output [9:0] LEDR
+);
+
+	// クロック・リセット
+	wire RST = SW[9];
+	wire STEP_CLK = KEY[0];
+
+	// MIPS内部信号
+	wire [31:0] PC, Result, Rdata1, Rdata2, Wdata, nextPC;
+	wire [15:0] selected_val;
+	wire [4:0] led_indicator;
+
+	// MIPS本体
+	SingleClockMIPS mips (
+		.CLK(STEP_CLK),
+		.RST(RST),
+		.W_Ins(32'b0),
+		.WE(1'b0),
+		.PC(PC),
+		.Result(Result),
+		.Rdata1(Rdata1),
+		.Rdata2(Rdata2),
+		.Wdata(Wdata),
+		.nextPC(nextPC)
 	);
+
+	// 表示選択モジュール
+	Selector selector (
+		.sw(SW[2:0]),
+		.Rdata1(Rdata1),
+		.Rdata2(Rdata2),
+		.Result(Result),
+		.Wdata(Wdata),
+		.nextPC(nextPC),
+		.selected(selected_val),
+		.LED(led_indicator)
+	);
+
+	// 7セグ変換
+	SEG7DEC s0 (.DIN(selected_val[3:0]),   .dot_enable(1'b0), .seg_out(HEX0));
+	SEG7DEC s1 (.DIN(selected_val[7:4]),   .dot_enable(1'b0), .seg_out(HEX1));
+	SEG7DEC s2 (.DIN(selected_val[11:8]),  .dot_enable(1'b0), .seg_out(HEX2));
+	SEG7DEC s3 (.DIN(selected_val[15:12]), .dot_enable(1'b0), .seg_out(HEX3));
+
+	SEG7DEC s4 (.DIN(PC[5:2]), .dot_enable(1'b0), .seg_out(HEX4));
+	SEG7DEC s5 (.DIN(PC[9:6]), .dot_enable(1'b0), .seg_out(HEX5));
+
+	// 表示中の信号名をLEDで示す
+	assign LEDR[4:0] = led_indicator;
+	assign LEDR[9:5] = 5'b00000; // 未使用
+
+
 
 
 //=======================================================
