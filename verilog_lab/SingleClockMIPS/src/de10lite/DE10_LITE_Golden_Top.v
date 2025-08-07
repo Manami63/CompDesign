@@ -3,7 +3,7 @@ module DE10_LITE_Golden_Top (
     input  wire [9:0]  SW,
     input  wire [3:0]  KEY,
     output wire [7:0]  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
-    output wire [9:0]  LEDR
+    output wire [9:0]  SEL_LED
 );
 
 // BTN_INからSelectorへの配線用
@@ -37,7 +37,7 @@ SingleClockMIPS SCM0 (
 );
 
 // Selector（sw=SEL配線、信号名はSEL_LEDなど）
-Selector SELECTOR00 (
+SELECTOR SELECTOR00 (
     .sw(clean_btn[2:0]),
     .Rdata1(Rdata1),
     .Rdata2(Rdata2),
@@ -49,12 +49,12 @@ Selector SELECTOR00 (
 );
 
 // 7セグメント出力
-SEG7DEC Res00 (.DIN(Vdata[3:0]),    .seg_out(HEX0));
-SEG7DEC Res01 (.DIN(Vdata[7:4]),    .seg_out(HEX1));
-SEG7DEC Res02 (.DIN(Vdata[11:8]),   .seg_out(HEX2));
-SEG7DEC Res03 (.DIN(Vdata[15:12]),  .seg_out(HEX3));
-SEG7DEC PC00  (.DIN(PC[5:2]),       .seg_out(HEX4));
-SEG7DEC PC01  (.DIN(PC[9:6]),       .seg_out(HEX5));
+SEG7DEC Res00 (.DIN(Vdata[3:0]),  .EN(1'b1), .DOT(1'b1),  .nHEX(HEX0));
+SEG7DEC Res01 (.DIN(Vdata[7:4]),  .EN(1'b1), .DOT(1'b0),  .nHEX(HEX1));
+SEG7DEC Res02 (.DIN(Vdata[11:8]), .EN(1'b1), .DOT(1'b0),  .nHEX(HEX2));
+SEG7DEC Res03 (.DIN(Vdata[15:12]), .EN(1'b1), .DOT(1'b0), .nHEX(HEX3));
+SEG7DEC PC00  (.DIN(PC[5:2]),      .EN(1'b1), .DOT(1'b0), .nHEX(HEX4));
+SEG7DEC PC01  (.DIN(PC[9:6]),     .EN(1'b1), .DOT(1'b1),  .nHEX(HEX5));
 
 // LED出力（下位5bitのみSelector制御、残り未使用0固定）
 assign LEDR[4:0] = SEL_LED;
