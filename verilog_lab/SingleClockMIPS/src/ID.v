@@ -25,6 +25,7 @@ assign Ed32 = (Op == 6'b001100 ||  // andi
 
 
 // 書き込み先レジスタを決定 MUX1
+wire [4:0] Wadr;
 assign Wadr = (Op == 6'b000011) ? 5'd31 :
             (Op == 6'b000000) ? Rd :
             Radr2;
