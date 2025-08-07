@@ -21,7 +21,3 @@ begin
     endcase
 end
 endmodule
-
-
-	
-	
