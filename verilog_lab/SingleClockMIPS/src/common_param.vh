@@ -1,76 +1,62 @@
 // common_param.vh
 
-// global parameters
-parameter WIDTH = 32;
-parameter IMEM_SIZE = 128;
-parameter REGFILE_SIZE = 32;
-parameter DMEM_SIZE = 128;
+// グローバルなdefineマクロとして記述
+`define WIDTH        32
+`define IMEM_SIZE    128
+`define REGFILE_SIZE 32
+`define DMEM_SIZE    128
 
-// operation codes (*) Op==6'd0
-parameter R_FORM = 6'd0;
+`define R_FORM   6'd0
+`define LW       6'd35
+`define SW_OP    6'd43
 
-// Op:operation codes (w/o function code)
-parameter LW   = 6'd35;
-parameter SW   = 6'd43;
+`define ADD      6'd32
+`define ADDU     6'd33
+`define SUB      6'd34
+`define SUBU     6'd35
+`define AND      6'd36
+`define OR       6'd37
+`define XOR      6'd38
+`define NOR      6'd39
+`define SLT      6'd42
+`define SLTU     6'd43
 
-// Func:function codes (ALU) Op==6'd0
-parameter ADD  = 6'd32;
-parameter ADDU = 6'd33;
-parameter SUB  = 6'd34;
-parameter SUBU = 6'd35;
-parameter AND  = 6'd36;
-parameter OR   = 6'd37;
-parameter XOR  = 6'd38;
-parameter NOR  = 6'd39;
-parameter SLT  = 6'd42;
-parameter SLTU = 6'd43;
+`define ADDI     6'd8
+`define ADDIU    6'd9
+`define SLTI     6'd10
+`define SLTIU    6'd11
+`define ANDI     6'd12
+`define ORI      6'd13
+`define XORI     6'd14
+//`define LUI      6'd15
 
-// Op:operation codes (w/o function code)
-parameter ADDI  = 6'd8;
-parameter ADDIU = 6'd9;
-parameter SLTI  = 6'd10;
-parameter SLTIU = 6'd11;
-parameter ANDI  = 6'd12;
-parameter ORI   = 6'd13;
-parameter XORI  = 6'd14;
-//parameter LUI   = 6'd15;
+`define SLL      6'd0
+`define SRL      6'd2
+`define SRA      6'd3
+`define SLLV     6'd4
+`define SRLV     6'd6
+`define SRAV     6'd7
 
-// Func:function codes (Shift) Op==6'd0
-parameter SLL   = 6'd0;
-parameter SRL   = 6'd2;
-parameter SRA   = 6'd3;
-parameter SLLV  = 6'd4;
-parameter SRLV  = 6'd6;
-parameter SRAV  = 6'd7;
+`define MFHI     6'd16
+`define MTHI     6'd17
+`define MFLO     6'd18
+`define MTLO     6'd19
+`define MULT     6'd24
+`define MULTU    6'd25
+`define DIV      6'd26
+`define DIVU     6'd27
 
-// Func:function codes (Mult & Div) Op==6'd0
-parameter MFHI   = 6'd16;
-parameter MTHI   = 6'd17;
-parameter MFLO   = 6'd18;
-parameter MTLO   = 6'd19;
-parameter MULT   = 6'd24;
-parameter MULTU  = 6'd25;
-parameter DIV    = 6'd26;
-parameter DIVU   = 6'd27;
+`define JR       6'd8
+`define JALR     6'd9
 
-// Func:function codes (Jump) Op==6'd0 (w/o function code)
-parameter JR     = 6'd8;
-parameter JALR   = 6'd9;
+`define BLTZ     6'd1
+`define BGEZ     6'd1
+`define J        6'd2
+`define JAL      6'd3
+`define BEQ      6'd4
+`define BNE      6'd5
+`define BLEZ     6'd6
+`define BGTZ     6'd7
 
-// Op:operation codes (Jump & Branch)
-parameter BLTZ   = 6'd1; //　どうやって同じOPcodeを比較するのか．
-parameter BGEZ   = 6'd1;
-//parameter BLTZAL = 6'd1;
-//parameter BGEZAL = 6'd1;
-parameter J      = 6'd2;
-parameter JAL    = 6'd3;
-parameter BEQ    = 6'd4;
-parameter BNE    = 6'd5;
-parameter BLEZ   = 6'd6;
-parameter BGTZ   = 6'd7;
-
-// rt[20:16] field codes (BLTZ or BGEZ)
-parameter BLTZ_r = 5'd0; // ↑rtの値が0か1か
-parameter BGEZ_r = 5'd1;
-
-// End of common_param.vh
+`define BLTZ_r   5'd0
+`define BGEZ_r   5'd1
