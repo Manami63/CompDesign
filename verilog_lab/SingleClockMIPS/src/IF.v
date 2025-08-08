@@ -5,7 +5,7 @@ input [31:0] newPC, W_Ins;
 output reg [31:0] PC; // reg?
 output [31:0] nextPC, Ins;
 
-// PCにある番地の命令を取得
+// PC???????????
 IM imem (
     .CLK(CLK),
     .RST(RST),
@@ -15,7 +15,7 @@ IM imem (
     .Ins(Ins)
 );
 
-assign nextPC = PC + 4; //　つぎの命令アドレス
+assign nextPC = PC + 4; //??????????
 
     always @(posedge CLK or posedge RST) begin
         if(RST)
@@ -25,4 +25,4 @@ assign nextPC = PC + 4; //　つぎの命令アドレス
     end
 endmodule
 
-// PCで命令を読んで，次のPCを計算
+// PC??????????PC???
