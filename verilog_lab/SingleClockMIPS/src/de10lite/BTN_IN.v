@@ -1,5 +1,5 @@
 module BTN_IN (
-    input       CLK, RST,
+    input        CLK, RST,
     input  [3:0] nBIN,
     output reg [3:0] BOUT
 );
