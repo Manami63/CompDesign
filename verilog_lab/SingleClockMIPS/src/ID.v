@@ -8,6 +8,7 @@ output [31:0] Rdata1, Rdata2, Ed32;
 reg [31:0] regs[0:31];
 
 wire [5:0]  Op = Ins[31:26];
+wire [5:0]  Func = Ins[5:0];       
 wire [4:0]  Radr1 = Ins[25:21];
 wire [4:0]  Radr2 = Ins[20:16];
 wire [4:0]  Rd = Ins[15:11];
@@ -43,4 +44,5 @@ RegisterFile rf (
 );
 
 endmodule
+
 
