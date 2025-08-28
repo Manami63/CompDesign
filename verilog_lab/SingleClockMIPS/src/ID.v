@@ -13,22 +13,22 @@ wire [4:0]  Radr2 = Ins[20:16];
 wire [4:0]  Rd = Ins[15:11];
 wire [15:0] Imm = Ins[15:0];
 
-// 即値の符号拡張/ゼロ拡張
-assign Ed32 = (Op == 6'b001100 ||  // andi
-            Op == 6'b001101 ||      // ori
-            Op == 6'b001110) ?      // xori     
-            {16'b0, Imm} :          
-            {{16{Imm[15]}}, Imm};
+// 書き込み先レジスタ
+wire [4:0] Wadr = (op == JAL) ? 5'b11111 :
+                  (op == R_FORM || op == JALR) ? Rd :
+                  Radr2;
 
-// 書き込み先レジスタ選択
-wire [4:0] Wadr;
-assign Wadr = (Op == 6'b000011) ? 5'd31 :
-            (Op == 6'b000000) ? Rd :
-            Radr2;
+// 書き込み許可
+wire WE = (op == R_FORM && func != JR && func != MTHI && func != MTLO &&
+           func != MULT && func != DIV && func != DIVU) ||
+          (6'd8 <= op && op <= 6'd15) || // I形式算術論理演算
+          (op == LW) || (op == JAL);
 
-wire WE = (Op != 6'b000100) &&
-            (Op != 6'b000101) &&
-            (Op != 6'b000010);
+// 即値の符号/ゼロ拡張
+assign Ed32 = (op == ANDI || op == ORI || op == XORI) ?
+              {16'b0, Imm} :
+              {{16{Imm[15]}}, Imm};
+
 
 RegisterFile rf (
     .CLK(CLK),
@@ -43,3 +43,4 @@ RegisterFile rf (
 );
 
 endmodule
+
